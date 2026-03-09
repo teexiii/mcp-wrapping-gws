@@ -1103,7 +1103,7 @@ async def gws_schema(method: str) -> dict | str:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="GWS MCP Server")
     parser.add_argument("--port", type=int, default=8000, help="Port to listen on")
-    parser.add_argument("--host", type=str, default="127.0.0.1", help="Host to bind to")
+    parser.add_argument("--host", type=str, default="0.0.0.0", help="Host to bind to")
     parser.add_argument(
         "--transport",
         choices=["streamable-http", "sse", "stdio"],
