@@ -1,0 +1,17 @@
+services:
+    gws-mcp:
+        build: .
+        container_name: gws-mcp-server
+        ports:
+            - "${MCP_PORT:-8000}:8000"
+        restart: unless-stopped
+        volumes:
+            - ${GWS_CREDENTIALS_PATH:-./credentials.json}:/app/credentials.json:ro
+        environment:
+            - GOOGLE_WORKSPACE_CLI_CREDENTIALS_FILE=/app/credentials.json
+        healthcheck:
+            test: ["CMD", "curl", "-f", "http://localhost:8000/mcp"]
+            interval: 30s
+            timeout: 10s
+            retries: 3
+            start_period: 15s
