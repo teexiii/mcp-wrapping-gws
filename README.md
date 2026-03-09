@@ -54,6 +54,7 @@ gws auth export --unmasked > credentials.json
 
 # Run
 docker run -p 8000:8000 -v ./credentials.json:/app/credentials.json gws-mcp
+
 ```
 
 ## Available Tools

@@ -21,4 +21,4 @@ ENV GOOGLE_WORKSPACE_CLI_CREDENTIALS_FILE=/app/credentials.json
 
 EXPOSE 8000
 
-CMD ["python", "server.py", "--port", "8000", "--transport", "streamable-http"]
+CMD ["python", "server.py", "--port", "8000", "--host", "0.0.0.0", "--transport", "streamable-http"]
